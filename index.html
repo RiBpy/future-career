@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Explorer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#" id="homeLink">
+                <i class="fas fa-home me-2"></i>Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="hero-title">EXPLORE POPULAR CAREER PATHS</h1>
+            <p class="hero-subtitle">
+                Discover in-demand careers and unlock exciting opportunities for your future.<br>
+                Hover over career cards to see detailed overviews.
+            </p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <div class="container">
+        <div class="stats-section">
+            <div class="row text-center">
+                <div class="col-md-6">
+                    <div class="stat-item justify-content-center">
+                        <i class="fas fa-graduation-cap stat-icon"></i>
+                        <span class="stat-number" id="totalSubjects">128</span>
+                        <span class="ms-1">Total Careers</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="stat-item justify-content-center">
+                        <i class="fas fa-list stat-icon"></i>
+                        <span>Page</span>
+                        <span class="stat-number mx-1" id="currentPage">1</span>
+                        <span>of</span>
+                        <span class="stat-number mx-1" id="totalPages">11</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div class="loading-spinner" id="loadingSpinner">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="loading-text">Loading career information...</div>
+        </div>
+
+        <!-- Career Cards Container -->
+        <div class="row" id="careerContainer">
+            <!-- Career cards will be dynamically loaded here -->
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination-container">
+            <nav aria-label="Career pagination">
+                <ul class="pagination" id="paginationContainer">
+                    <!-- Pagination will be dynamically loaded here -->
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
