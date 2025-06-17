@@ -207,22 +207,28 @@ $(document).ready(function () {
           </div>
           <div class="career-content">
             <h3 class="career-title">${escapeHtml(career.name)}</h3>
+
             <div class="career-meta">
               <div><i class="fas fa-calendar-alt"></i> ${createdDate}</div>
             </div>
+
             <div class="career-meta">
               <div><i class="fas fa-check-circle text-success"></i> ${
                 career?.status === 1 ? "Active" : "Inactive"
               }</div>
             </div>
-            <div class="career-meta">
-              <div><i class="fas fa-book text-success me-1"></i>Serial No- ${
-                career?.serial_no
-              }</div>
-            </div>
+
+            ${
+              career?.serial_no
+                ? `<div class="career-meta">
+              <div><i class="fas fa-book text-success me-1"></i>Serial No- ${career?.serial_no}</div></div>`
+                : `<div class="career-meta">Serial is not available</div>`
+            }
+           
             <div class="mb-3">
               <span class="department-tag">${escapeHtml(departmentName)}</span>
             </div>
+            
             <button class="view-details-btn" data-career-id="${career.id}">
               View Details
             </button>
@@ -369,21 +375,18 @@ $(document).ready(function () {
                 ? escapeHtml(details.overview)
                 : "No overview available."
             }</p>
-            
-            ${
+         
+            <p><span class="fw-bold">Why this career?</span> <br> ${
               details.why_this
-                ? `
-              <p><span class="fw-bold">Why this career?</span> <br>${details.why_this}</p>
-            `
-                : ""
-            }
-             ${
-               details.requirement
-                 ? `
-              <p><span class="fw-bold">Requirement</span> <br>${details.requirement}</p>
-            `
-                 : ""
-             }
+                ? escapeHtml(details.why_this)
+                : "No instructions available."
+            }</p>
+
+            <p><span class="fw-bold">Requirements</span> <br> ${
+              details.requirements
+                ? escapeHtml(details.requirements)
+                : "No requirements available."
+            }</p>
           </div>
           
           <div class="career-details-info">
